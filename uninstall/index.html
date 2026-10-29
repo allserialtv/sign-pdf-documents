@@ -5,10 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sign PDF Documents has been removed</title>
 <link rel="icon" href="assets/icon32.png">
-<!-- TODO: replace this placeholder form with the Google Form (one question) — either embed:
-<iframe src="https://docs.google.com/forms/d/e/GOOGLE_FORM_ID/viewform?embedded=true" width="640" height="520" frameborder="0">Loading…</iframe>
-or set the form action below to the Google Form "formResponse" URL and the textarea name to its entry.XXXX id.
-No backend is attached yet: the form below does not send anything. -->
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; font: 18px/1.45 Inter, "Segoe UI", Roboto, Arial, sans-serif; color: #1e1b2e; background: #f3f0fb; }
@@ -21,11 +17,14 @@ No backend is attached yet: the form below does not send anything. -->
 </head>
 <body>
 <main>
-  <h1>Why have you deleted Sign PDF Documents?</h1>
-  <form action="GOOGLE_FORM_RESPONSE_URL" method="post" target="_self">
-    <textarea name="entry.GOOGLE_FORM_ENTRY_ID" aria-label="Your answer" placeholder="Your answer"></textarea>
+  <h1>Sorry to see you go. What exactly didn't you like?</h1>
+  <form id="f" action="https://docs.google.com/forms/d/e/1FAIpQLSfF0x_NMxcXLhJUERRHwQgJ7NpgvpZlcJ9tg2trRVTXohJNQA/formResponse" method="post" target="gf">
+    <textarea name="entry.1643080354" required aria-label="Your answer" placeholder="Your answer"></textarea>
     <button type="submit">Send</button>
   </form>
+  <p id="thanks" hidden>Thank you for your feedback!</p>
+  <iframe name="gf" hidden></iframe>
+  <script>document.getElementById("f").addEventListener("submit",function(){var f=this;setTimeout(function(){f.hidden=true;document.getElementById("thanks").hidden=false;},300);});</script>
 </main>
 </body>
 </html>
